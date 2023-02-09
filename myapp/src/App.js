@@ -1,12 +1,15 @@
-import './App.css';
+import React, {useState} from 'react';
 
-function App() {
+function Counter() {
+    const [count, setCount] = useState(0);
     return (
-        <>
-            <h1>Hello World</h1>
-            <h2>This is my first React component</h2>
-        </>
+        <div>
+            <p>Counter = {count}</p>
+            <button onClick={() => setCount(count + 1)}>
+                Increment
+            </button>
+        </div>
     );
 }
 
-export default App;
+export default Counter;
