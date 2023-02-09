@@ -3,7 +3,8 @@ package com.ua.react.repositiries;
 import com.ua.react.model.Car;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.*;
 
 /**
@@ -13,7 +14,7 @@ import java.util.*;
  * @version 5.0
  * @since 09/02/2023
  */
-@Repository
+@RepositoryRestResource(path = "vehicles")
 public interface CarRepository extends CrudRepository<Car, Long> {
     //  @Query("select c from Car c where c.brand like %?1")
     @Query("select c from Car c where c.brand = ?1")
@@ -21,7 +22,7 @@ public interface CarRepository extends CrudRepository<Car, Long> {
 
     List<Car> findByBrandAndModel(String brand, String model);
 
-    List<Car> findByColor(String color);
+    List<Car> findByColor(@Param("color") String color);
 
     List<Car> findByBrandOrColor(String brand, String color);
 

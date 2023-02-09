@@ -1,7 +1,8 @@
 package com.ua.react.model;
 
-import jakarta.persistence.*;
 import lombok.*;
+import lombok.ToString.*;
+import jakarta.persistence.*;
 
 /**
  * Car.
@@ -17,7 +18,7 @@ import lombok.*;
 @NoArgsConstructor
 public class Car {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String brand;
     private String model;
@@ -28,6 +29,7 @@ public class Car {
     private int price;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner")
+    @Exclude
     private Owner owner;
 
     public Car(String brand, String model, String color,
