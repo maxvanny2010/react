@@ -1,14 +1,7 @@
 package com.ua.react.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.*;
 import java.util.*;
 
 /**
@@ -21,6 +14,7 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 public class Owner {
     @Id
@@ -28,11 +22,10 @@ public class Owner {
     private long ownerid;
     private String firstname;
     private String lastname;
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Car> cars;
 
     public Owner(String firstname, String lastname) {
-        super();
         this.firstname = firstname;
         this.lastname = lastname;
     }
