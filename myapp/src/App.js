@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-function App() {
+function Counter() {
     const [count, setCount] = useState(0);
-    const [count2, setCount2] = useState(0);
-    const increment = () => {
-        setCount(count + 1); // No re-rendering yet
-        setCount2(count2 + 1);// Component re-renders after all state updates
-    }
+// Called after every render
+    useEffect(() => {
+        console.log('Hello from useEffect')
+    });
     return (
         <div>
-            <p>Counters: {count} {count2}</p>
-            <button onClick={increment}>Increment</button>
+            <p>{count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment
+            </button>
         </div>
     );
 }
 
-export default App;
+export default Counter;
