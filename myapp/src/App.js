@@ -1,20 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useRef} from 'react';
+import './App.css';
 
-function Counter() {
-    const [count, setCount] = useState(0);
-    useEffect(() => {
-        console.log('Hello from useEffect');
-        return () => {
-            console.log('Clean up function');
-        }
-    }, [count]);
+function App() {
+    const inputRef = useRef(null);
     return (
         <div>
-            <p>{count}</p>
-            <button onClick={() => setCount(count + 1)}>Increment
+            <input ref={inputRef}/>
+            <button onClick={() => inputRef.current.focus()}>
+                Focus input
             </button>
         </div>
     );
 }
 
-export default Counter;
+export default App;
