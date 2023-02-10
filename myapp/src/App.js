@@ -1,8 +1,8 @@
 import React from 'react';
-import GithubFetch from "./GithubFetch";
+import AgGrid from "./AgGrid";
 
 function App() {
-    return <GithubFetch/>;
+    return <AgGrid/>;
 }
 
 export default App;
