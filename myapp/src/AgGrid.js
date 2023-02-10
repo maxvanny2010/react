@@ -10,7 +10,14 @@ function AgGrid() {
     const columns = [
         {field: 'full_name', sortable: true, filter: true},
         {field: 'html_url', sortable: true, filter: true},
-        {field: 'owner.login', sortable: true, filter: true}
+        {field: 'owner.login', sortable: true, filter: true},
+        {
+            field: 'full_name',
+            cellRenderer: params =>
+                <button
+                    onClick={() => alert(params.value)}> Press me
+                </button>
+        }
     ]
     const fetchData = () => {
         fetch(`https://api.github.com/search/repositories?q=${keyword}`)
