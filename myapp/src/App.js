@@ -1,8 +1,8 @@
 import React from 'react';
-import AgGrid from "./AgGrid";
+import ShopList from "./ShopList";
 
 function App() {
-    return <AgGrid/>;
+    return <ShopList />;
 }
 
 export default App;
