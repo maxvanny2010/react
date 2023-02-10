@@ -8,9 +8,9 @@ function AgGrid() {
     const [keyword, setKeyword] = useState('');
     const [data, setData] = useState([]);
     const columns = [
-        {field: 'full_name'},
-        {field: 'html_url'},
-        {field: 'owner.login'}
+        {field: 'full_name', sortable: true, filter: true},
+        {field: 'html_url', sortable: true, filter: true},
+        {field: 'owner.login', sortable: true, filter: true}
     ]
     const fetchData = () => {
         fetch(`https://api.github.com/search/repositories?q=${keyword}`)
@@ -27,6 +27,8 @@ function AgGrid() {
                 <AgGridReact
                     rowData={data}
                     columnDefs={columns}
+                    pagination={true}
+                    paginationPageSize={8}
                 />
             </div>
         </div>
