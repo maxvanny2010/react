@@ -1,8 +1,8 @@
 import React from 'react';
-import MyFormPressButton from "./MyFormPressButton";
+import MyFormMulti from "./MyFormMulti";
 
 function App() {
-    return <MyFormPressButton/>;
+    return <MyFormMulti/>;
 }
 
 export default App;
