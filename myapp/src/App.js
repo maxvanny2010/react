@@ -1,8 +1,8 @@
 import React from 'react';
-import MyFormMulti from "./MyFormMulti";
+import MyFormByFields from "./MyFormByFields";
 
 function App() {
-    return <MyFormMulti/>;
+    return <MyFormByFields/>;
 }
 
 export default App;
