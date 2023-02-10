@@ -1,13 +1,14 @@
-import React, {useRef} from 'react';
-import './App.css';
+import React, {useState} from 'react';
+import useTitle from './useTitle';
 
 function App() {
-    const inputRef = useRef(null);
+    const [count, setCount] = useState(0);
+    useTitle(`You clicked ${count} times`);
     return (
         <div>
-            <input ref={inputRef}/>
-            <button onClick={() => inputRef.current.focus()}>
-                Focus input
+            <p>Counter = {count}</p>
+            <button onClick={() => setCount(count + 1)}>
+                Increment
             </button>
         </div>
     );
