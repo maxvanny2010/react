@@ -1,15 +1,7 @@
 import React from 'react';
-import AuthContext from './AuthContext';
-import MyComponent from './MyComponent';
+import MyList from "./MyList";
 
 function App() {
-// User is authenticated and we get the username
-    const userName = 'john';
-    return (
-        <AuthContext.Provider value={userName}>
-            <MyComponent/>
-        </AuthContext.Provider>
-    );
+    return <MyList/>;
 }
-
 export default App;
