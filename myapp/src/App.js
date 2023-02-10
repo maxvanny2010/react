@@ -1,8 +1,8 @@
 import React from 'react';
-import ShopList from "./ShopList";
+import Routores from "./Routores";
 
 function App() {
-    return <ShopList />;
+    return <Routores/>;
 }
 
 export default App;
