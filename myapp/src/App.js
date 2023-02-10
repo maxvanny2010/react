@@ -1,7 +1,8 @@
 import React from 'react';
-import MyList from "./MyList";
+import MyTable from "./MyTable";
 
 function App() {
-    return <MyList/>;
+    return <MyTable/>;
 }
+
 export default App;
