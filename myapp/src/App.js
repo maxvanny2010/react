@@ -1,8 +1,8 @@
 import React from 'react';
-import MyFormByFields from "./MyFormByFields";
+import Weather from "./Weather";
 
 function App() {
-    return <MyFormByFields/>;
+    return <Weather city="Zurich"/>;
 }
 
 export default App;
