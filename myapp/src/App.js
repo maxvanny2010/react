@@ -1,8 +1,8 @@
 import React from 'react';
-import Weather from "./Weather";
+import GithubFetch from "./GithubFetch";
 
 function App() {
-    return <Weather city="Zurich"/>;
+    return <GithubFetch/>;
 }
 
 export default App;
