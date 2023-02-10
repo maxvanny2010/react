@@ -1,8 +1,8 @@
 import React from 'react';
-import MyTable from "./MyTable";
+import MyButton from "./MyButton";
 
 function App() {
-    return <MyTable/>;
+    return <MyButton/>;
 }
 
 export default App;
