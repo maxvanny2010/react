@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from 'react';
+import {SERVER_URL} from "../constants";
 
 function CarList() {
     const [cars, setCars] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:8081/api/vehicles')
+        fetch(SERVER_URL + '/api/vehicles')
             .then(response => response.json())
             .then(data => setCars(data._embedded.cars))
             .catch(err => console.error(err));
     }, []);
-    return(
+    return (
         <div>
             <table>
                 <tbody>
@@ -27,4 +28,5 @@ function CarList() {
         </div>
     );
 }
+
 export default CarList;
