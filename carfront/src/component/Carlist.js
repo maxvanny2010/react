@@ -6,6 +6,14 @@ import AddCar from "./AddCar";
 import EditCar from "./EditCar";
 import {gridClasses} from "@mui/material";
 
+function CustomToolbar() {
+    return (
+        <GridToolbarContainer className={gridClasses.toolbarContainer}>
+            <GridToolbarExport/>
+        </GridToolbarContainer>
+    );
+}
+
 function CarList() {
     const [open, setOpen] = useState(false);
     const [cars, setCars] = useState([]);
@@ -82,17 +90,9 @@ function CarList() {
         fetchCars();
     }, []);
 
-    function CustomToolbar() {
-        return (
-            <GridToolbarContainer
-                className={gridClasses.toolbarContainer}>
-                <GridToolbarExport/>
-            </GridToolbarContainer>
-        );
-    }
-
     return (
         <React.Fragment>
+            <AddCar addCar={addCar}/>
             <div style={{height: 500, width: '100%'}}>
                 <DataGrid
                     rows={cars}
@@ -107,7 +107,7 @@ function CarList() {
                     onClose={() => setOpen(false)}
                     message="Car deleted"/>
             </div>
-            <AddCar addCar={addCar}/>
+
         </React.Fragment>
     );
 }
