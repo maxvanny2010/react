@@ -4,7 +4,7 @@ import {DataGrid, GridToolbarContainer, GridToolbarExport} from '@mui/x-data-gri
 import Snackbar from '@mui/material/Snackbar';
 import AddCar from "./AddCar";
 import EditCar from "./EditCar";
-import {gridClasses} from "@mui/material";
+import {Button, gridClasses, Stack} from "@mui/material";
 
 function CustomToolbar() {
     return (
@@ -37,7 +37,7 @@ function CarList() {
             sortable: false,
             filterable: false,
             renderCell: row =>
-                <button onClick={() => onDelClick(row.id)}>Delete</button>
+                <Button onClick={() => onDelClick(row.id)}>Delete</Button>
         }
     ];
     const fetchCars = () =>
@@ -92,7 +92,9 @@ function CarList() {
 
     return (
         <React.Fragment>
-            <AddCar addCar={addCar}/>
+            <Stack mt={2} mb={2}>
+                <AddCar addCar={addCar} />
+            </Stack>
             <div style={{height: 500, width: '100%'}}>
                 <DataGrid
                     rows={cars}
