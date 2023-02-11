@@ -111,7 +111,17 @@ function CarList() {
                     open={open}
                     autoHideDuration={2000}
                     onClose={() => setOpen(false)}
-                    message="Car deleted"/>
+                    message="Car deleted"
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right'
+                    }}
+                    ContentProps={{
+                        sx: {
+                            backgroundColor: 'rgba(65,185,72,0.87)', color: '#ffffff'
+                        }
+                    }}
+                />
             </div>
 
         </React.Fragment>
