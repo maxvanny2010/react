@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {Container} from "@mui/material";
-import CarList from "./component/Carlist";
+import Login from "./auth/Login";
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
                         <Typography variant="h6"> CarShop </Typography>
                     </Toolbar>
                 </AppBar>
-                <CarList/>
+                <Login/>
             </div>
         </Container>
     );
