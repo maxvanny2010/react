@@ -59,6 +59,15 @@ function Login() {
                     autoHideDuration={3000}
                     onClose={() => setOpen(false)}
                     message="Login failed: Check your username and password"
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right'
+                    }}
+                    ContentProps={{
+                        sx: {
+                            backgroundColor: 'rgba(236,93,109,0.87)', color: '#ffffff'
+                        }
+                    }}
                 />
             </div>
         );
